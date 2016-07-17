@@ -16,4 +16,8 @@ Route::get('/', function () {
 });
 
 
+Route::get('load', function () {
+    return App\TimeSheet::loadcsv('150601๘150630.csv');
+});
+
 
