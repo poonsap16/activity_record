@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class HolidaysController extends Controller
+class CalendarsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,17 @@ class HolidaysController extends Controller
      */
     public function index()
     {
-        $holidays = \App\Holiday::all();
-        return view('holiday.index', compact('holidays')); 
+        $activitys = \App\Activity::all();
+        return view('activity.calendar', compact('activitys'));
+    
+    }
+
+    public function date()
+    {
+        // $data = Input::all();
+        // return $data;
+        return view('activity.date', compact('data'));
+    
     }
 
     /**
@@ -27,7 +36,8 @@ class HolidaysController extends Controller
      */
     public function create()
     {
-        return view('holiday.holiday'); 
+        // $activitys = \App\Activity::all();
+        // return view('activity.calendar', compact('activitys'));
     }
 
     /**
@@ -38,8 +48,7 @@ class HolidaysController extends Controller
      */
     public function store(Request $request)
     {
-        $holidays = \App\Holiday::create($request->all());
-        return redirect(url('holiday'));
+        //
     }
 
     /**
@@ -61,9 +70,7 @@ class HolidaysController extends Controller
      */
     public function edit($id)
     {
-        $holidays = \App\Holiday::find($id);
-        //return $holidays;
-        return view('holiday.edit', compact('holidays'));
+        //
     }
 
     /**
@@ -75,9 +82,7 @@ class HolidaysController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $holidays = \App\Holiday::find($id);
-        $holidays->update($request->all());
-        return redirect(url('holiday'));
+        //
     }
 
     /**

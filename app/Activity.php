@@ -23,4 +23,5 @@ class Activity extends Model
 	public function getRecordLocationName(){
 		return $this->reader_location[$this->attributes['reader_location']];
 	}
+
 }

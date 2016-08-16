@@ -8,9 +8,9 @@ class Holiday extends Model
 {
     protected $table = 'holidays';
     protected $fillable = [
-    		'holiday_id',
+    		'id',
 			'date',
-			'holiday_name'
+			'name'
 
     ];
 }

@@ -40,5 +40,19 @@ Route::get('activity/{id}/edit','ActivitysController@edit');
 Route::post('activity/{id}','ActivitysController@update');
 
 Route::get('holiday','HolidaysController@index');
-//Route::get('holiday/create','HolidaysController@create');
+Route::get('holiday/create','HolidaysController@create');
 Route::post('holiday','HolidaysController@store');
+Route::get('holiday/{id}/edit','HolidaysController@edit');
+Route::post('holiday/{id}','HolidaysController@update');
+
+Route::get('calendar','CalendarsController@index');
+Route::get('calendar/create','CalendarsController@create');
+Route::post('date','CalendarsController@date');
+// Route::get('calendar/{id}/edit','CalendarsController@edit');
+// Route::post('calendar/{id}','CalendarsController@update');
+
+// Route::post('calendar/date', function(){
+// 	$data = Input::all();
+// 	//return $data;
+// 	return view('activity.date', compact('data'));
+// });

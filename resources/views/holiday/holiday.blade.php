@@ -11,7 +11,7 @@
 	<label>วันที่ : </label>
 		<input type="date" name="date"><br><br>
 	<label>ชื่อวันหยุด : </label>
-		<input type="text" name="holiday_name" size="100"><br><br>
+		<input type="text" name="holiday_name" size="50"><br><br>
 	    	
 	<input type="submit" value="บันทึกข้อมูล">
 

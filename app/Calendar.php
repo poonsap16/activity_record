@@ -12,4 +12,5 @@ class Calendar extends Model
 			'activity_id',
 			'reader_location',
     ];
+
 }
