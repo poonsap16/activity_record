@@ -16,28 +16,20 @@ class CalendarsController extends Controller
      */
     public function index()
     {
-        $activitys = \App\Activity::all();
-        return view('activity.calendar', compact('activitys'));
+        //$activitys = \App\Activity::all();
+        //return view('activity.calendar', compact('activitys'));
     
     }
 
-    public function date()
-    {
-        // $data = Input::all();
-        // return $data;
-        return view('activity.date', compact('data'));
-    
-    }
-
-    /**
+   /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        // $activitys = \App\Activity::all();
-        // return view('activity.calendar', compact('activitys'));
+        $activitys = \App\Activity::all();
+        return view('activity.calendar', compact('activitys'));
     }
 
     /**
