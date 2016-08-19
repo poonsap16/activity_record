@@ -23,13 +23,13 @@
 
 		<label></label>
 			
-			<input type="radio" name="day" value="1">วันอาทิตย์
-			<input type="radio" name="day" value="2">วันจันทร์
-			<input type="radio" name="day" value="3">วันอังคาร
-			<input type="radio" name="day" value="4">วันพุธ
-			<input type="radio" name="day" value="5">วันพฤหัส
-			<input type="radio" name="day" value="6">วันศุกร์
-			<input type="radio" name="day" value="7">วันเสาร์
+			<input type="radio" name="day" value="0">วันอาทิตย์
+			<input type="radio" name="day" value="1">วันจันทร์
+			<input type="radio" name="day" value="2">วันอังคาร
+			<input type="radio" name="day" value="3">วันพุธ
+			<input type="radio" name="day" value="4">วันพฤหัส
+			<input type="radio" name="day" value="5">วันศุกร์
+			<input type="radio" name="day" value="6">วันเสาร์
 
 	<input type="submit" value="บันทึกข้อมูล">
 

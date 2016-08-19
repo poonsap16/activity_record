@@ -47,7 +47,7 @@ Route::post('holiday/{id}','HolidaysController@update');
 
 Route::get('calendar','CalendarsController@index');
 Route::get('calendar/create','CalendarsController@create');
-//Route::post('date','CalendarsController@date');
+//Route::get('date','CalendarsController@date');
 // Route::get('calendar/{id}/edit','CalendarsController@edit');
 // Route::post('calendar/{id}','CalendarsController@update');
 
@@ -56,9 +56,6 @@ Route::get('result-from-post/{activity_name}/{start}/{stop}/{day}', function ($a
 	//return $activity_name."/".$start."/".$stop;
 	$activitys = \App\Activity::all();
 	//ตรวจสอบว่าวันที่เริ่มต้นจนถึงวันที่สิ้นสุด ตามวันที่เลือก
-	// for(i=1; $date <= $stop; i++){
-	//return $start ."/". $stop;
-
 	//http://www.w3schools.com/php/func_date_date_create.asp
 	//$date = date_add($date,date_interval_create_from_date_string("1 days"));
 	$date_start=date_create($start);
@@ -69,14 +66,29 @@ Route::get('result-from-post/{activity_name}/{start}/{stop}/{day}', function ($a
 	echo "<br>";
 	echo "<hr>";
 	//echo date_format($date_start,"d/m/Y");
+	$i=1;
 	while ($date_start<=$date_stop) {
 		echo date_format($date_start,"d/m/Y");
 		echo "<br>";
+		//หาว่าวันที่ที่รับมาเป็นวันอะไร ได้ค่า 1-7
+		//echo date_format($date_start,"w");
+		$date_mark = date_format($date_start,"w");
+		echo $date_mark."=".$day;
+
+		if($date_mark == $day){
+		//$date_uses[$i] = $date_start;
+		//$date_uses[$i] = $date_start->copy();
+		$date_uses[$i] = clone $date_start; 
+		echo date_format($date_uses[$i],"d/m/Y");
+		}
+		echo "<br>";
 		$date_start = date_add($date_start,date_interval_create_from_date_string("1 days"));
+		$i = $i+1;
 	}
 	//รับข้อมูลจากฟอร์ม calendar แล้วส่งไปหน้า date
-	//return view('activity.date', compact('activity_name','start','stop', 'day', 'activitys'));
+	return view('activity.date', compact('activity_name','start','stop', 'day', 'activitys', 'date_uses'));
 }); 
+
 
 //ส่งข้อมูลจากหน้า calendar ไปหน้ารับข้อมูล
 Route::post('calendar/date', function(){

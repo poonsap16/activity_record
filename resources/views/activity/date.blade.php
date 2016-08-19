@@ -20,6 +20,9 @@
 		<label>วันที่สิ้นสุด : </label>
 		<input type="date" name="date_end" value= {{$stop}}><br><br>
 
+		@foreach($date_uses as $date_use)
+			<input type="checkbox" name="chk_day"> {{date_format($date_use,"d/m/Y")}}<br><br>
+		@endforeach
 	<input type="submit" value="บันทึกข้อมูล">
 
 </form>
