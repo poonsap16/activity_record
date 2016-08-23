@@ -5,7 +5,7 @@
 @section('content') 
 <h1>จัดตารางกิจกรรม</h1> 
 <hr> 
-<form method="POST" action="{{ url('calendar/data/') }}">
+<form method="POST" action="{{ url('calendar') }}">
 	<input type="hidden" name="_token" value="{{ csrf_token() }}" />	
 	<label>ชื่อกิจจกรรม : </label>
 		@foreach($activitys as $activity)
@@ -16,12 +16,14 @@
 		<input type="text" name="activity_name" value= {{$activity_name}}>
 		<br><br>
 		<label>วันที่เริ่ม : </label>
-		<input type="date" name="date_begin" value= {{$start}}><br><br>
+		<input type="date" name="date_begin" value= {{$start}}>
+		<input type="time" name="time_begin" value = "{{ $activity->start_time}}"><br><br>
 		<label>วันที่สิ้นสุด : </label>
-		<input type="date" name="date_end" value= {{$stop}}><br><br>
+		<input type="date" name="date_end" value= {{$stop}}>
+		<input type="time" name="time_begin" value = "{{ $activity->end_time}}"><br><br>
 
 		@foreach($date_uses as $date_use)
-			<input type="checkbox" name="chk_day"> {{date_format($date_use,"d/m/Y")}}<br><br>
+			<input type="checkbox" name="chk_day" checked> {{date_format($date_use,"d/m/Y")}}<br><br>
 		@endforeach
 	<input type="submit" value="บันทึกข้อมูล">
 

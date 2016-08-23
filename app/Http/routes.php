@@ -47,7 +47,7 @@ Route::post('holiday/{id}','HolidaysController@update');
 
 Route::get('calendar','CalendarsController@index');
 Route::get('calendar/create','CalendarsController@create');
-//Route::get('date','CalendarsController@date');
+// Route::post('date','CalendarsController@store');
 // Route::get('calendar/{id}/edit','CalendarsController@edit');
 // Route::post('calendar/{id}','CalendarsController@update');
 
@@ -97,6 +97,9 @@ Route::post('calendar/date', function(){
 	return redirect("result-from-post/".$data['activity_name']."/".$data['date_begin']."/".$data['date_end']."/".$data['day']);
 });
 
-Route::post('calendar/data', function(){
+Route::post('calendar','CalendarsController@store');
 
-});
+// 
+// Route::post('calendar/data', function(){
+// 	return 'save data.';
+// });

@@ -40,7 +40,8 @@ class CalendarsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        \App\Calendar::create($request->all());
+        return redirect('calendar');
     }
 
     /**
